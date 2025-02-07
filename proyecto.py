@@ -20,6 +20,7 @@ class Guerrero(Personaje):
     def atacar(self, enemigo):
         enemigo.salud -= self.fuerza
         print(f"Guerrero {self.nombre} ataca con {self.fuerza} de fuerza")
+        print("")
 
 class Mago(Personaje):
     def __init__(self, nombre, salud=90, poder_magico=20):
@@ -29,6 +30,7 @@ class Mago(Personaje):
     def atacar(self, enemigo):
         enemigo.salud -= self.poder_magico
         print(f"Mago {self.nombre} ataca con {self.poder_magico} de poder mágico")
+        print("")
 
 def combate():
     guerrero = Guerrero("Juan")
@@ -39,11 +41,13 @@ def combate():
             guerrero.atacar(mago)
             print(f"Salud actual del mago: {mago.salud}")
             print(f"Salud actual del guerrero: {guerrero.salud}")
+            print("")
             turno += 1
         else:
             mago.atacar(guerrero)
             print(f"Salud actual del mago: {mago.salud}")
             print(f"Salud actual del guerrero: {guerrero.salud}")
+            print("")
             turno += 1
         if not mago.esta_vivo() or not guerrero.esta_vivo():
             break
